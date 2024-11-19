@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        manrope: ['"Manrope"', "sans-serif"], // Add the Manrope font
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
