@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import TrackShipFaq from "./TrackShipFaq";
+import ShipmentDetails from "./ShipmentDetails";
 
 const Hero: React.FC = () => {
   return (
@@ -46,7 +47,9 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <TrackShipFaq />
+      <ShipmentDetails />
     </div>
+    
   );
 };
 
