@@ -132,10 +132,10 @@ const ShipmentDetails = () => {
 
   return (
     <div className='p-20 pt-4 font-manrope '>
-      <p className='font-manrope font-semibold text-[20px]'>Tracking ID: {trackingData.trackingId}</p>
-      <div className="mt-6 w-[836px] h-[129px] border border-none rounded-lg  shadow-bg-">
+      <p className='font-manrope font-medium text-[20px]'>Tracking ID: {trackingData.trackingId}</p>
+      <div className="mt-6 w-[836px] h-[129px] border border-none flex flex-col items-center justify-center  ">
         {/* header row */}
-        <div className="grid grid-cols-6 bg-[#F8F9FF] text-center font-manrope font-semibold">
+        <div className="grid grid-cols-6 bg-[#F8F9FF] text-center  rounded-t-md shadow-slate-400 shadow-xl font-semibold">
           {[
             "Docket No.",
             "Reference No.",
@@ -146,14 +146,14 @@ const ShipmentDetails = () => {
           ].map((header, index) => (
             <div
               key={index}
-              className="p-4 text-sm font-medium text-[14px] border-b border-r"
+              className="p-4  font-semibold text-[14px] border-b border-r"
             >
               {header}
             </div>
           ))}
         </div>
         {/* data row */}
-        <div className="grid grid-cols-6 bg-white border-none border-b border-l border-r text-center">
+        <div className="grid grid-cols-6 bg-white border-none border-b border-l border-r text-center shadow-slate-300  shadow-md rounded-b-lg">
           {[
             "docketNo",
             "referenceNo",
