@@ -1,9 +1,52 @@
 import React from 'react';
 
 
+
+interface TrackingData {
+  trackingId: string;
+  shipmentInfo: {
+    docketNo: string;
+    referenceNo: string;
+    transporter: string;
+    actualDeliveryDate: string;
+    estimatedDeliveryDate: string;
+    currentStatus: string;
+  };
+  consigneeInfo: {
+    name: string;
+    contactNo: string;
+    address: string;
+  };
+  bookingInfo: {
+    bookingId: string;
+    orderNumber: string;
+    packetCount: string;
+  };
+  pickupInfo: {
+    address: string;
+    date: string;
+    mode: string;
+  };
+  shipmentDetails: {
+    weight: string;
+    pod: string;
+  };
+  timeline: {
+    date: string;
+    time: string;
+    status: string;
+    description: string;
+  }[];
+  activityLog: {
+    status: string;
+    dateTime: string;
+    update: string;
+  }[];
+}
+
 const ShipmentDetails = () => {
   // Sample tracking data
-  const trackingData = {
+  const trackingData: TrackingData = {
     trackingId: '342493931820',
     shipmentInfo: {
       docketNo: '342493931820',
@@ -88,41 +131,52 @@ const ShipmentDetails = () => {
   };
 
   return (
-    <div className='mt-6 w-3/4 border rounded-md'>
+    <div className='p-20 pt-4 font-manrope '>
+      <p className='font-manrope font-semibold text-[20px]'>Tracking ID: {trackingData.trackingId}</p>
+      <div className="mt-6 w-[836px] h-[129px] border border-none rounded-lg  shadow-bg-">
         {/* header row */}
-
-        <div className='grid grid-cols-6 bg-[#F8F9FF] border-t border-l border-r text-center font-manrope font-semibold '>
-            <div className='p-4 text-sm font-medium text-[14px]   broder-b border-r'>Docket No.</div>
-            <div className='p-4 text-sm font-medium text-[14px]   border-b border-r '> Reference No.</div>
-            <div className='p-4 text-sm font-medium text-[14px]   border-b border-r'> Transporter</div>
-            <div className='p-4 text-sm font-medium text-[14px]   border-b border-r'> Actual Delivery Date</div>
-            <div className='p-4 text-sm font-medium text-[14px]   border-b border-r'> Estimated Delivery Date</div>
-            <div className='p-4 text-sm font-medium text-[14px]  border-b border-r'> Current Status</div>
+        <div className="grid grid-cols-6 bg-[#F8F9FF] text-center font-manrope font-semibold">
+          {[
+            "Docket No.",
+            "Reference No.",
+            "Transporter",
+            "Actual Delivery Date",
+            "Estimated Delivery Date",
+            "Current Status",
+          ].map((header, index) => (
+            <div
+              key={index}
+              className="p-4 text-sm font-medium text-[14px] border-b border-r"
+            >
+              {header}
+            </div>
+          ))}
         </div>
         {/* data row */}
-        <div className='grid grid-cols-6 bg-white border-b border-l border-r text-center'>
-            <div className='p-4 text-sm text-gray-800 border-r'>
-                {trackingData.shipmentInfo.docketNo}
+        <div className="grid grid-cols-6 bg-white border-none border-b border-l border-r text-center">
+          {[
+            "docketNo",
+            "referenceNo",
+            "transporter",
+            "actualDeliveryDate",
+            "estimatedDeliveryDate",
+            "currentStatus",
+          ].map((key, index) => (
+            <div
+              key={index}
+              className="pl-3 pr-3 pt-6  pb-7 text-sm text-gray-800 border-r"
+            >
+              {trackingData.shipmentInfo[key as keyof typeof trackingData.shipmentInfo]}
             </div>
-            <div className='p-4 text-sm text-gray-800 border-r'>
-                {trackingData.shipmentInfo.referenceNo}
-            </div>
-            <div className='p-4 text-sm text-gray-800 border-r'>
-                {trackingData.shipmentInfo.transporter}
-            </div>
-            <div className='p-4 text-sm text-gray-800 border-r'>
-                {trackingData.shipmentInfo.actualDeliveryDate}
-            </div>
-            <div className='p-4 text-sm text-gray-800 border-r'>
-                {trackingData.shipmentInfo.estimatedDeliveryDate}
-            </div>
-            <div className='p-4 text-sm text-gray-800 border-r'>
-                {trackingData.shipmentInfo.currentStatus}
-            </div>
+          ))}
         </div>
+      </div>
+
     </div>
-    
+
+
   );
 };
+
 
 export default ShipmentDetails;
