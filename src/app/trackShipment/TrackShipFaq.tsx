@@ -38,13 +38,13 @@ const TrackShipFaq: React.FC = () => {
 
   return (
     <div className="relative mt-14 font-manrope">
-      <div className="flex max-w-[1150px] mx-auto">
+      <div className="sm:flex sm:max-w-[1150px] sm:mx-auto">
         {/* Left Section */}
-        <div className="w-1/2">
-          <h2 className="text-4xl text-left pb-4">
+        <div className=" grid grid-cols-2 sm:space-y-4 sm:flex-col  sm:w-1/2">
+          <h2 className="text-3xl  sm:text-4xl text-left sm:pb-4">
             Frequently Asked <br /> Questions
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="  sm:mb-6 text-gray-600">
             Find answers to common questions about our <br /> shipping services,
             rates, delivery times, and more.
           </p>
@@ -54,7 +54,7 @@ const TrackShipFaq: React.FC = () => {
         </div>
 
         {/* Right Section */}
-        <div className="space-y-4 w-1/2">
+        <div className=" sm:space-y-4 sm:w-1/2">
           {faqs.map((faq, index) => (
             <div key={index} className="border border-gray-200 rounded-sm">
               <div
