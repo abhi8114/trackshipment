@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
                   placeholder="Enter AWB or Order ID"
                   className="p-3 w-[200px] sm:w-[550px] border border-gray-300 rounded-md bg-[#E6E6E6] text-gray-800"
                 />
-                <p className="text-gray-400 text-[14px] leading-[24px]">
+                <p className="text-[#B0B0B0] text-[14px] leading-[24px]">
                   *For multiple queries use comma (,)
                 </p>
               </div>
