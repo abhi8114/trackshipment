@@ -7,8 +7,14 @@ const Hero: React.FC = () => {
   return (
     <div className="relative  h-[40vh] w-full  sm:h-[80vh] font-manrope layout-fill ">
       {/* Background Image */}
+      <Image
+        src="../../Group 866.svg"
+        alt="Background Image"
+        fill
+        className="object-cover w-[1368px] h-[100vh] sm:h-[80vh] sm:w-[1368px] "
+      />
 
-      <div className="absolute  inset-0 bg-black/50 z-1  "></div>
+
 
       {/* Content */}
       <div className="relative pt-20 w-full  sm:pt-36 z-10 sm:h-full text-white mx-auto ">
@@ -35,7 +41,7 @@ const Hero: React.FC = () => {
                 <p className="text-gray-400 text-[14px] leading-[24px]">
                   *For multiple queries use comma (,)
                 </p>
-              </div>  
+              </div>
 
               <div>
                 <button className="w-[150px] sm:w-[250px] ml-3 p-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
@@ -49,7 +55,7 @@ const Hero: React.FC = () => {
       <TrackShipFaq />
       {/* <ShipmentDetails /> */}
     </div>
-    
+
   );
 };
 

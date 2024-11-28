@@ -38,14 +38,14 @@ const TrackShipFaq: React.FC = () => {
 
   return (
     <div className="relative mt-14 font-manrope">
-      <div className="sm:flex sm:max-w-[1150px] sm:mx-auto">
+      <div className=" sm:flex sm:space-x-56 p-5 sm:p-0 ">
         {/* Left Section */}
-        <div className=" grid grid-cols-2 sm:space-y-4 sm:flex-col  sm:w-1/2">
-          <h2 className="text-3xl  sm:text-4xl text-left sm:pb-4">
+        <div className=" grid grid-cols-2 sm:space-y-4 sm:flex sm:flex-col  sm:w-[50%] sm:pl-20 ">
+          <h2 className="text-3xl  sm:text-[40px] sm:line-height-[50px] text-left sm:pb-4 ">
             Frequently Asked <br /> Questions
           </h2>
-          <p className="  sm:mb-6 text-gray-600">
-            Find answers to common questions about our <br /> shipping services,
+          <p className="text-[14px] line-height-[20px] mt-3 sm:mt-0 sm:text-[16px] sm:line-height-[24px]  text-[#272727]">
+            Find answers to common questions about our shipping services,
             rates, delivery times, and more.
           </p>
           <button className="bg-themeRed text-white py-2 px-4 rounded-md mb-8 transition duration-200">
@@ -54,15 +54,15 @@ const TrackShipFaq: React.FC = () => {
         </div>
 
         {/* Right Section */}
-        <div className=" sm:space-y-4 sm:w-1/2">
+        <div className="sm:w-[60%]  space-y-2 sm:space-y-4 sm:pr-20 ">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-gray-200 rounded-sm">
+            <div key={index} className="border border-gray-200 rounded-sm sm:text-left  ">
               <div
                 className="bg-[#F8F2F2] flex justify-between p-4 cursor-pointer"
                 onClick={() => toggleAccordion(index)}
               >
-                <h3 className="text-xl font-medium">{faq.question}</h3>
-                <span className="text-red-500 text-[24px]">
+                <h3 className="text-[16px] sm:text-[20px] sm:line-height:[28px] ">{faq.question}</h3>
+                <span className="text-red-500 text-[16px] sm:text-[20px]">
                   {index === activeIndex ? "-" : "+"}
                 </span>
               </div>
