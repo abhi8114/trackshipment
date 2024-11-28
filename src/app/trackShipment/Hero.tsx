@@ -1,9 +1,21 @@
 "use client";
 import Image from "next/image";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import TrackShipFaq from "./TrackShipFaq";
 import ShipmentDetails from "./ShipmentDetails";
 import TrackingTimeline from "./TrackingTimeline";
-const Hero: React.FC = () => {
+const Hero: React.FC = () => {  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const trackingNumber = searchParams.get("trackingNumber");
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const currentParams = new URLSearchParams(searchParams);
+    currentParams.set("trackingNumber", "123456");
+    router.push(`${pathname}?${currentParams.toString()}`);
+  }
+
   return (
     <div className="relative h-[75vh] w-full md:h-[80vh] font-manrope layout-fill ">
       {/* Background Image */}
@@ -30,6 +42,7 @@ const Hero: React.FC = () => {
           {/* Input and Button */}
           <div className="mt-20 md:mt-28  w-full">
             <form
+              onSubmit={handleSubmit}
               method="POST"
               className="flex justify-center flex-col md:flex-row p-4 w-11/12 mx-auto md:w-[860px] md:h-[120px] md:p-6 bg-[#FFFFFF] rounded-lg"
             >
@@ -45,17 +58,21 @@ const Hero: React.FC = () => {
               </div>
 
               <div className="md:block flex md:justify-start justify-center md:mt-0 mt-2 w-full">
-                <button className="w-[120px] h-[42px] mx-auto md:h-[50px] text-[14px] md:text-[16px] md:w-[250px] md:ml-3 md:p-3 bg-[#C2202B] text-white font-semibold rounded-md ">
-                  Track Now
-                </button>
+                <input type="submit" value="Track Now" className="w-[120px] h-[42px] mx-auto md:h-[50px] text-[14px] md:text-[16px] md:w-[250px] md:ml-3 md:p-3 bg-[#C2202B] text-white font-semibold rounded-md" />
               </div>
             </form>
           </div>
         </div>
       </div>
-      <TrackShipFaq />
-      <ShipmentDetails /> 
-      <TrackingTimeline />
+      {
+        !trackingNumber ? (
+          <TrackShipFaq />
+        ) : 
+        <>
+          <ShipmentDetails /> 
+          <TrackingTimeline />
+        </>
+      }
     </div>
   );
 };
