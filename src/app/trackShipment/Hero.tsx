@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
         src="../../Group 866.svg"
         alt="Background Image"
         fill
-        className="object-cover w-[1368px] h-[100vh] sm:h-[80vh] sm:w-[1368px] "
+        className="object-cover  sm:h-[80vh] sm:w-[1368px] "
       />
 
 
@@ -30,13 +30,13 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Input and Button */}
-          <div className="mt-20  sm:mt-28 flex">
-            <div className="flex p-4  w-[400px] sm:w-[860px] sm:h-[120px] sm:p-6 bg-[#FFFFFF] rounded-lg">
-              <div className="rounded-md w-[200px] sm:w-[550px] sm:h-[50px]">
+          <div className="mt-20   sm:mt-28 flex :">
+            <div className="flex p-4  w-[350px] sm:w-[860px] sm:h-[120px] sm:p-6 bg-[#FFFFFF] rounded-lg">
+              <div className="rounded-md  sm:w-[550px] sm:h-[50px]">
                 <input
                   type="text"
                   placeholder="Enter AWB or Order ID"
-                  className="p-3 w-[300px] sm:w-[550px] border border-gray-300 rounded-md bg-[#E6E6E6] text-gray-800"
+                  className="p-3 w-[200px] sm:w-[550px] border border-gray-300 rounded-md bg-[#E6E6E6] text-gray-800"
                 />
                 <p className="text-gray-400 text-[14px] leading-[24px]">
                   *For multiple queries use comma (,)
@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
               </div>
 
               <div>
-                <button className="w-[150px] sm:w-[250px] ml-3 p-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
+                <button className="w-[100px] h-[50px] text-[14px] sm:text-[16px] sm:w-[250px] ml-3 p-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
                   Track Now
                 </button>
               </div>

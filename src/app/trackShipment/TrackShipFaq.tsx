@@ -38,7 +38,7 @@ const TrackShipFaq: React.FC = () => {
 
   return (
     <div className="relative mt-14 font-manrope">
-      <div className=" sm:flex sm:space-x-56 p-5 sm:p-0 ">
+      <div className=" sm:flex sm:space-x-56 p-5 sm:p-0 sm:max-w-[1440px] sm:mx-auto">
         {/* Left Section */}
         <div className=" grid grid-cols-2 sm:space-y-4 sm:flex sm:flex-col  sm:w-[50%] sm:pl-20 ">
           <h2 className="text-3xl  sm:text-[40px] sm:line-height-[50px] text-left sm:pb-4 ">
