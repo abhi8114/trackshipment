@@ -26,7 +26,8 @@ const TrackShipFaq: React.FC = () => {
         "Your shipment can be delivered between 10:00 am and 8:00 pm on the same day when it is marked out for delivery.",
     },
     {
-      question: "How can I get the delivery of my shipment if I missed it today?",
+      question:
+        "How can I get the delivery of my shipment if I missed it today?",
       answer:
         "Your shipment can be delivered between 10:00 am and 8:00 pm on the same day when it is marked out for delivery.",
     },
@@ -37,32 +38,34 @@ const TrackShipFaq: React.FC = () => {
   };
 
   return (
-    <div className="relative mt-14 font-manrope">
-      <div className=" sm:flex sm:space-x-56 p-5 sm:p-0 sm:max-w-[1440px] sm:mx-auto">
+    <div className="relative py-10 md:py-14 font-manrope bg-white text-primary">
+      <div className="md:flex md:space-x-56 p-5 md:p-0 md:max-w-[1440px] md:mx-auto">
         {/* Left Section */}
-        <div className=" grid grid-cols-2 sm:space-y-4 sm:flex sm:flex-col  sm:w-[50%] sm:pl-20 ">
-          <h2 className="text-3xl  sm:text-[40px] sm:line-height-[50px] text-left sm:pb-4 ">
+        <div className="md:space-y-4 md:flex md:flex-col md:w-[50%] md:pl-20 md:mb-0 mb-10">
+          <h2 className="text-3xl  md:text-[40px] md:line-height-[50px] text-left md:pb-4 ">
             Frequently Asked <br /> Questions
           </h2>
-          <p className="text-[14px] line-height-[20px] mt-3 sm:mt-0 sm:text-[16px] sm:line-height-[24px]  text-[#272727]">
-            Find answers to common questions about our shipping services,
-            rates, delivery times, and more.
+          <p className="text-[14px] line-height-[20px] mt-3 md:mt-0 md:text-[16px] md:line-height-[24px]  text-primary">
+            Find answers to common questions about our shipping services, rates,
+            delivery times, and more.
           </p>
-          <button className="bg-themeRed text-white py-2 px-4 rounded-md mb-8 transition duration-200">
-            Calculate Shipping Cost
-          </button>
         </div>
 
         {/* Right Section */}
-        <div className="sm:w-[60%]  space-y-2 sm:space-y-4 sm:pr-20 ">
+        <div className="md:w-[60%]  space-y-2 md:space-y-4 md:pr-20 ">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-gray-200 rounded-md  sm:text-left  ">
+            <div
+              key={index}
+              className="border border-gray-200 rounded-md  md:text-left  "
+            >
               <div
                 className="bg-[#F8F2F2] flex justify-between p-4 cursor-pointer"
                 onClick={() => toggleAccordion(index)}
               >
-                <h3 className="text-[16px] sm:text-[20px] sm:line-height:[28px] ">{faq.question}</h3>
-                <span className="text-red-500 text-[16px] sm:text-[20px]">
+                <h3 className="text-[16px] md:text-[20px] md:line-height:[28px] ">
+                  {faq.question}
+                </h3>
+                <span className="text-red-500 text-[16px] md:text-[20px]">
                   {index === activeIndex ? "-" : "+"}
                 </span>
               </div>

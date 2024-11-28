@@ -5,48 +5,51 @@ import ShipmentDetails from "./ShipmentDetails";
 import TrackingTimeline from "./TrackingTimeline";
 const Hero: React.FC = () => {
   return (
-    <div className="relative  h-[40vh] w-full  sm:h-[80vh] font-manrope layout-fill ">
+    <div className="relative h-[75vh] w-full md:h-[80vh] font-manrope layout-fill ">
       {/* Background Image */}
       <Image
         src="../../Group 866.svg"
         alt="Background Image"
         fill
-        className="object-cover  sm:h-[80vh] sm:w-[1368px] "
+        className="object-cover md:h-[80vh] md:w-[1368px] "
       />
 
       {/* Content */}
-      <div className="relative pt-20 w-full  sm:pt-36 z-10 sm:h-full text-white mx-auto ">
+      <div className="relative pt-28 w-full md:pt-36 z-10 md:h-full text-white mx-auto ">
         {/* Heading */}
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-[32px] sm:text-[40px] font-manrope leading-[40px] sm:leading-[50px]">
+          <h1 className="text-[32px] md:text-[40px] font-manrope leading-[40px] md:leading-[50px]">
             Track Your Shipment
           </h1>
 
           {/* Subheading */}
-          <p className="sm:mt-4 text-[14px] sm:text-[16px] leading-[26px] text-center">
+          <p className="md:mt-4 text-[14px] md:text-[16px] leading-[26px] text-center">
             Enter your docket number/booking ID/order <br /> number/reference ID
           </p>
 
           {/* Input and Button */}
-          <div className="mt-20   sm:mt-28 ">
-            <div className="flex p-4  w-[350px] sm:w-[860px] sm:h-[120px] sm:p-6 bg-[#FFFFFF] rounded-lg">
-              <div className="rounded-md  sm:w-[550px] sm:h-[50px]">
+          <div className="mt-20 md:mt-28  w-full">
+            <form
+              method="POST"
+              className="flex justify-center flex-col md:flex-row p-4 w-11/12 mx-auto md:w-[860px] md:h-[120px] md:p-6 bg-[#FFFFFF] rounded-lg"
+            >
+              <div className="rounded-md w-full md:w-[550px] md:h-[50px]">
                 <input
                   type="text"
                   placeholder="Enter AWB or Order ID"
-                  className="p-3 w-[200px] sm:w-[550px] border border-gray-300 rounded-md bg-[#E6E6E6] text-gray-800"
+                  className="p-3 w-full md:w-[550px] border border-gray-300 rounded-md bg-[#E6E6E6] text-gray-800 focus:outline-none"
                 />
-                <p className="text-[#B0B0B0] text-[14px] leading-[24px]">
+                <p className="text-[#B0B0B0] text-[12px] md:text-[14px] leading-[24px]">
                   *For multiple queries use comma (,)
                 </p>
               </div>
 
-              <div>
-                <button className="w-[100px] h-[50px] text-[14px] sm:text-[16px] sm:w-[250px] ml-3 p-3 bg-[#C2202B] text-white font-semibold rounded-md ">
+              <div className="md:block flex md:justify-start justify-center md:mt-0 mt-2 w-full">
+                <button className="w-[120px] h-[42px] mx-auto md:h-[50px] text-[14px] md:text-[16px] md:w-[250px] md:ml-3 md:p-3 bg-[#C2202B] text-white font-semibold rounded-md ">
                   Track Now
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -54,7 +57,6 @@ const Hero: React.FC = () => {
       <ShipmentDetails /> 
       <TrackingTimeline />
     </div>
-
   );
 };
 
