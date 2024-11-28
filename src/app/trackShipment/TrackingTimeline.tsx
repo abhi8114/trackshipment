@@ -22,7 +22,7 @@ const TrackingTimeline: React.FC = () => {
       <h2 className="text-lg font-semibold text-[#272727] mb-6">Tracking Status</h2>
       <div className="relative">
         {timeline.map((entry, index) => (
-          <div key={index} className="flex items-start relative">
+          <div key={index} className="flex h-full items-start relative">
             {/* Timeline Indicator */}
             <div className="relative flex flex-col items-center">
               {/* Circle */}
@@ -44,13 +44,13 @@ const TrackingTimeline: React.FC = () => {
                   className={`absolute top-6 w-[2px] ${
                     entry.status !== 'Exception' ? 'bg-red-500' : 'bg-gray-300'
                   }`}
-                  style={{ height: 'calc(100% + 24px)' }} // Extends the line to connect circles
+                  style={{ height: 'calc(100% + 48px)' }} // Extends the line to connect circles
                 />
               )}
             </div>
 
             {/* Timeline Content */}
-            <div className="ml-4 mb-8">
+            <div className="ml-4 pb-8">
               <p className="text-sm text-[#272727] font-semibold">{entry.date}</p>
               <p className="text-sm text-[#414042]">{entry.time}</p>
               <p className="text-sm text-[#272727] font-medium mt-1">{entry.status}</p>

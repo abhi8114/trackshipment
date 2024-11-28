@@ -69,8 +69,7 @@ const Hero: React.FC = () => {  const router = useRouter();
           <TrackShipFaq />
         ) : 
         <>
-          <ShipmentDetails /> 
-          <TrackingTimeline />
+          <ShipmentDetails />
         </>
       }
     </div>
