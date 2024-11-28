@@ -2,7 +2,7 @@
 import Image from "next/image";
 import TrackShipFaq from "./TrackShipFaq";
 import ShipmentDetails from "./ShipmentDetails";
-
+import TrackingTimeline from "./TrackingTimeline";
 const Hero: React.FC = () => {
   return (
     <div className="relative  h-[40vh] w-full  sm:h-[80vh] font-manrope layout-fill ">
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Input and Button */}
-          <div className="mt-20   sm:mt-28 flex :">
+          <div className="mt-20   sm:mt-28 ">
             <div className="flex p-4  w-[350px] sm:w-[860px] sm:h-[120px] sm:p-6 bg-[#FFFFFF] rounded-lg">
               <div className="rounded-md  sm:w-[550px] sm:h-[50px]">
                 <input
@@ -51,7 +51,8 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <TrackShipFaq />
-      {/* <ShipmentDetails /> */}
+      <ShipmentDetails /> 
+      <TrackingTimeline />
     </div>
 
   );

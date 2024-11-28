@@ -156,11 +156,11 @@ import React from 'react';
 
 
   return (
-    <div className='p-20 pt-4 font-manrope max-w-[836px] '>
-      <p className='font-manrope font-medium text-[20px]'>Tracking ID: {trackingData.trackingId}</p>
-      <div className="mt-6 w-[836px] h-[129px] border border-none flex flex-col items-center justify-center  ">
+    <div className='p-4 sm:p-20 sm:pt-4 font-manrope max-w-full sm:max-w-[836px] '>
+      <p className='font-manrope font-medium text-lg sm:text-[20px]'>Tracking ID: {trackingData.trackingId}</p>
+      <div className="mt-6 border border-none flex flex-col items-center justify-center w-full sm:w-[836px]  ">
         {/* header row */}
-        <div className="grid grid-cols-6 bg-[#F8F9FF] text-center  rounded-t-md shadow-slate-400 shadow-xl font-semibold">
+        <div className=" grid grid-cols-1 sm:grid-cols-6 bg-[#F8F9FF] text-center rounded-t-md shadow-md font-semibold">
           {[
             "Docket No.",
             "Reference No.",
@@ -179,7 +179,7 @@ import React from 'react';
           ))}
         </div>
         {/* data row */}
-        <div className="grid grid-cols-6 bg-white border-none border-b border-l border-r text-center shadow-slate-300  shadow-md rounded-b-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-6 bg-white text-center shadow-sm rounded-b-lg">
           {[
             "docketNo",
             "referenceNo",
@@ -190,16 +190,18 @@ import React from 'react';
           ].map((key, index) => (
             <div
               key={index}
-              className={`p-4 flex justify-center items-center font-medium text-[14px] border-b ${index === 5 ? '' : 'border-r'
-                } text-[#272727]`}
+              className={`p-2 sm:p-4 font-medium text-[12px] sm:text-[14px] text-[#272727] ${index === 5 ? '' : 'border-r'}`}
             >
               {trackingData.shipmentInfo[key as keyof typeof trackingData.shipmentInfo]}
             </div>
           ))}
         </div>
       </div>
+
+      {/* second section */}
+
       <div>
-        <div className="mt-4 pl-6 pt-8 pb-6 shadow-gray-300 shadow-md bg-white rounded-lg w-[832px] h-[432px] ">
+        <div className="mt-4 p-7 shadow-slate-300  shadow-md rounded-b-lg bg-white rounded-lg w-[836px] h-[482px] ">
           <div className="grid grid-cols-3  gap-x-28">
             {/* Row 1 */}
             <div >
@@ -279,29 +281,32 @@ import React from 'react';
           </div>
         </div>
       </div>
-      <div className=" mt-4  bg-white rounded-lg shadow-md w-[836px] h-[380px]">
-      <div className="overflow-x-auto">
-        <table className="w-full ">
-          <thead className="bg-gray-100">
+
+      {/* third section */}
+
+      <div className=" mt-4     ">
+      <div className=" w-[836px] h-[380px] shadow-slate-300  shadow-md rounded-lg">
+        <table className="w-full  ">
+          <thead className="bg-[#F8F9FF] h-[55px]">
             <tr>
-              <th className="border border-gray-300 px-4 py-2">Activity Status</th>
-              <th className="border border-gray-300 px-4 py-2">Date & Time</th>
-              <th className="border border-gray-300 px-4 py-2">Detailed Update</th>
-            </tr>
+              <th className="border-none  text-[14px] font-semibold text-[#272727] px-4 py-2 pr-24">Activity Status</th>
+              <th className="border-none text-[14px] font-semibold text-[#272727] px-4 py-2 text-left ">Date & Time</th>
+              <th className="border-none text-[14px] font-semibold text-[#272727] px-4 py-2  text-left">Detailed Update</th>
+            </tr>  
           </thead>
           <tbody>
             {trackingData.activityLog.map((log, index) => (
               <tr
                 key={index}
-                className="line-bottom border border-gray-300 px-8 py-2"
+                className="border-b border-gray-200  px-8 py-2"
               >
-                <td className=" text-gray-700">
+                <td className=" text-gray-700 px-4 py-2">
                   {log.status}
                 </td>
-                <td className=" text-gray-700">
+                <td className=" text-gray-700 px-4 py-2">
                   {log.dateTime}
                 </td>
-                <td className=" text-gray-700">
+                <td className=" text-gray-700 px-4 py-2">
                   {log.update}
                 </td>
               </tr>
@@ -310,6 +315,10 @@ import React from 'react';
         </table>
       </div>
     </div>
+
+    {/* /timeline */}
+
+    
     </div>
   );
 };

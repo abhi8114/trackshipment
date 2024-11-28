@@ -56,7 +56,7 @@ const TrackShipFaq: React.FC = () => {
         {/* Right Section */}
         <div className="sm:w-[60%]  space-y-2 sm:space-y-4 sm:pr-20 ">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-gray-200 rounded-sm sm:text-left  ">
+            <div key={index} className="border border-gray-200 rounded-md  sm:text-left  ">
               <div
                 className="bg-[#F8F2F2] flex justify-between p-4 cursor-pointer"
                 onClick={() => toggleAccordion(index)}
