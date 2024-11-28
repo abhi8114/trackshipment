@@ -14,8 +14,6 @@ const Hero: React.FC = () => {
         className="object-cover  sm:h-[80vh] sm:w-[1368px] "
       />
 
-
-
       {/* Content */}
       <div className="relative pt-20 w-full  sm:pt-36 z-10 sm:h-full text-white mx-auto ">
         {/* Heading */}
@@ -44,7 +42,7 @@ const Hero: React.FC = () => {
               </div>
 
               <div>
-                <button className="w-[100px] h-[50px] text-[14px] sm:text-[16px] sm:w-[250px] ml-3 p-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
+                <button className="w-[100px] h-[50px] text-[14px] sm:text-[16px] sm:w-[250px] ml-3 p-3 bg-[#C2202B] text-white font-semibold rounded-md ">
                   Track Now
                 </button>
               </div>
