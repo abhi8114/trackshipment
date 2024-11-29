@@ -18,20 +18,20 @@ const timeline: TimelineEntry[] = [
 
 const TrackingTimeline: React.FC = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md w-full sm:w-[350px] ">
+    <div className="bg-white p-6 rounded-lg shadow-md w-full sm:w-[350px]">
       <h2 className="text-lg font-semibold text-[#272727] mb-6">Tracking Status</h2>
       <div className="relative">
         {timeline.map((entry, index) => (
-          <div key={index} className="flex h-full items-start relative">
+          <div key={index} className="flex items-start relative">
             {/* Timeline Indicator */}
             <div className="relative flex flex-col items-center">
               {/* Circle */}
               <div
                 className={`w-6 h-6 flex items-center justify-center rounded-full ${
-                  entry.status !== 'Exception' ? 'bg-red-500' : 'bg-gray-400'
+                  entry.status !== "Exception" ? "bg-red-500" : "bg-gray-400"
                 }`}
               >
-                {entry.status !== 'Exception' ? (
+                {entry.status !== "Exception" ? (
                   <span className="text-white font-bold">&#10003;</span>
                 ) : (
                   <span className="text-white font-bold">!</span>
@@ -42,9 +42,13 @@ const TrackingTimeline: React.FC = () => {
               {index !== timeline.length - 1 && (
                 <div
                   className={`absolute top-6 w-[2px] ${
-                    entry.status !== 'Exception' ? 'bg-red-500' : 'bg-gray-300'
+                    timeline[index + 1].status !== "Exception"
+                      ? "bg-red-500"
+                      : "bg-gray-300"
                   }`}
-                  style={{ height: 'calc(100% + 48px)' }} // Extends the line to connect circles
+                  style={{
+                    height: 'calc(100% + 80px)', // Adjust height to connect circles
+                  }}
                 />
               )}
             </div>
