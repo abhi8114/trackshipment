@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Hero from "./trackShipment/Hero";
+import Careers from "@/Careers/Careers";
 
 
 
@@ -14,7 +15,7 @@ export default function RootLayout({ }) {
   return (
     <html lang="en">
       <body>
-        <Hero />  
+        <Careers  />
       </body>
     </html>
   );

@@ -4,6 +4,8 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import TrackShipFaq from "./TrackShipFaq";
 import ShipmentDetails from "./ShipmentDetails";
 import TrackingTimeline from "./TrackingTimeline";
+
+
 const Hero: React.FC = () => {  const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -18,6 +20,7 @@ const Hero: React.FC = () => {  const router = useRouter();
 
   return (
     <div className="relative h-[75vh] w-full md:h-[80vh] font-manrope layout-fill ">
+      
       {/* Background Image */}
       <Image
         src="../../Group 866.svg"
@@ -72,6 +75,11 @@ const Hero: React.FC = () => {  const router = useRouter();
           <ShipmentDetails />
         </>
       }
+
+      
+    
+     
+    
     </div>
   );
 };
