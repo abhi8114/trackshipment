@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Hero from "./trackShipment/Hero";
-import Careers from "@/Careers/Careers";
+import Careers from "@/app/Careers/Careers";
 
 
 

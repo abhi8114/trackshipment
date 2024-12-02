@@ -1,5 +1,5 @@
 
-import Careers from "@/Careers/Careers";
+import Careers from "@/app/Careers/Careers";
 import Hero from "./trackShipment/Hero";
 
 
