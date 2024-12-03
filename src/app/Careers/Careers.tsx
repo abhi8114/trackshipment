@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import CareerHighlights from './CareerHighlights';
 import MarqueeSection from './MarqueeSection';
+import CareersGridSlider from './CareersSlider';
 
 const Careers = () => {
     return (
@@ -31,6 +32,7 @@ const Careers = () => {
         </div>
         <CareerHighlights />
         {/* <MarqueeSection /> */}
+        <CareersGridSlider />
         </div>
 
 
