@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import CareerHighlights from './CareerHighlights';
+import MarqueeSection from './MarqueeSection';
 
 const Careers = () => {
     return (
@@ -23,14 +24,16 @@ const Careers = () => {
         </div>
             {/* second section */}
             <div>
-            <div className= "  h-[185px] ">
-                <p className='sm:pt-14 sm:pl-64 sm:pr-[256px] text-[#272727] text-[16px] line-height-[28px] text-center'>Our office culture thrives on a foundation of collaboration, innovation, and inclusivity. We foster an environment where every voice is heard, ideas are valued, and diversity is celebrated. Whether through team brainstorming sessions, cross-departmental projects, or company-wide initiatives, we encourage open communication and mutual respect. Flexibility and adaptability are key components of our culture, allowing us to navigate challenges with resilience and creativity</p>
+            <div className= " md:h-[185px] ">
+                <p className='pt-12 pl-10 pr-10    lg:pt-14 lg:pl-64 lg:pr-[256px] text-[#272727] text-[16px] line-height-[28px] text-center'>Our office culture thrives on a foundation of collaboration, innovation, and inclusivity. We foster an environment where every voice is heard, ideas are valued, and diversity is celebrated. Whether through team brainstorming sessions, cross-departmental projects, or company-wide initiatives, we encourage open communication and mutual respect. Flexibility and adaptability are key components of our culture, allowing us to navigate challenges with resilience and creativity</p>
 
             </div>
         </div>
         <CareerHighlights />
-
+        {/* <MarqueeSection /> */}
         </div>
+
+
         
 
     );
