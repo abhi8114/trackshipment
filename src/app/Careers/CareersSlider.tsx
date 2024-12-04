@@ -53,7 +53,7 @@ const CareersGridSlider: React.FC = () => {
 
   return (
     <div className="overflow-hidden bg-white py-20">
-      <div className="relative flex space-x-3 animate-marquee">
+      <div className="relative flex space-x-3 animate-marqueeMob md:animate-marquee">
         {/* Duplicate cards for seamless looping */}
         {[...cards, ...cards].map((card, index) => (
           <div

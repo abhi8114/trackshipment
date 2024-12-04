@@ -17,6 +17,7 @@ export default {
       },
       animation: {
         marquee: "marquee 50s linear infinite", // Smooth scrolling animation
+        marqueeMob: "marquee 15s linear infinite", // Smooth scrolling animation
       },
       keyframes: {
         marquee: {
