@@ -47,14 +47,14 @@ const TrackingTimeline: React.FC = () => {
                       : "bg-gray-300"
                   }`}
                   style={{
-                    height: 'calc(100% + 80px)', // Adjust height to connect circles
+                    height: ``, // Adjust height to connect circles
                   }}
                 />
               )}
             </div>
 
             {/* Timeline Content */}
-            <div className="ml-4 pb-8">
+            <div className={`ml-4 pb-8 progress-details-${index}`}>
               <p className="text-sm text-[#272727] font-semibold">{entry.date}</p>
               <p className="text-sm text-[#414042]">{entry.time}</p>
               <p className="text-sm text-[#272727] font-medium mt-1">{entry.status}</p>
