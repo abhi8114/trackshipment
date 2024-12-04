@@ -30,7 +30,7 @@ const Careers = () => {
             </div>
         </div>
         <CareerHighlights />
-        {/* <MarqueeSection /> */}
+        <MarqueeSection />
         </div>
 
 
