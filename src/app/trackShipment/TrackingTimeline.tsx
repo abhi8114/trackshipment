@@ -1,67 +1,125 @@
-import React from 'react';
+'use client';
 
-// Define the type for a timeline entry
-type TimelineEntry = {
-  date: string;
-  time: string;
-  status: string;
-  description: string;
-};
 
-// Timeline data with proper typing
-const timeline: TimelineEntry[] = [
-  { date: '13 Jul', time: '18:52 pm', status: 'Shipment Booked', description: 'Shipment booked with Amazon' },
-  { date: '15 Jul', time: '18:52 pm', status: 'Pickup Pending', description: 'Pickup pending from warehouse' },
-  { date: '17 Jul', time: '18:52 pm', status: 'In-Transit', description: 'Shipment undelivered due to operational issue' },
-  { date: '21 Jul', time: '18:52 pm', status: 'Exception', description: 'Shipment delay in-transit' },
-];
+import React, { useState } from "react";
 
-const TrackingTimeline: React.FC = () => {
+const TrackingTimeline = () => {
+  const [progress, setProgress] = useState(0); // Progress in percentage (0 to 100)
+
+  // Total stages (adjust based on your icons)
+  const stages = [
+    { icon: "📱", label: "Step 1" },
+    { icon: "📅", label: "Step 2" },
+    { icon: "🚚", label: "Step 3" },
+    { icon: "📦", label: "Step 4" },
+  ];
+
+  // SVG path dimensions
+  const pathLength = 300; // Adjust based on the rotated U-shape path length
+
+  // Calculate dashoffset based on progress
+  const dashOffset = ((100 - progress) / 100) * pathLength;
+
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md w-full sm:w-[350px]">
-      <h2 className="text-lg font-semibold text-[#272727] mb-6">Tracking Status</h2>
-      <div className="relative">
-        {timeline.map((entry, index) => (
-          <div key={index} className="flex items-start relative">
-            {/* Timeline Indicator */}
-            <div className="relative flex flex-col items-center">
-              {/* Circle */}
-              <div
-                className={`w-6 h-6 flex items-center justify-center rounded-full ${
-                  entry.status !== "Exception" ? "bg-red-500" : "bg-gray-400"
-                }`}
-              >
-                {entry.status !== "Exception" ? (
-                  <span className="text-white font-bold">&#10003;</span>
-                ) : (
-                  <span className="text-white font-bold">!</span>
-                )}
-              </div>
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      <h2 style={{ textAlign: "center" }}>Rotated U-Progress Bar</h2>
 
-              {/* Line (only if not last item) */}
-              {index !== timeline.length - 1 && (
-                <div
-                  className={`absolute top-6 w-[2px] ${
-                    timeline[index + 1].status !== "Exception"
-                      ? "bg-red-500"
-                      : "bg-gray-300"
-                  }`}
-                  style={{
-                    height: ``, // Adjust height to connect circles
-                  }}
-                />
-              )}
-            </div>
+      {/* SVG Container */}
+      <div style={{ position: "relative", width: "320px", height: "200px" }}>
+        <svg
+          width="1000"
+          height="200"
+          viewBox="0 0 60 320"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Grey Background Path */}
+          <path
+            d=" M0,0 H100 Q180,10 180,160 Q180,310 100,310 H-550"
+            fill="none"
+            stroke="#e0e0e0"
+            strokeWidth="8"
+          />
 
-            {/* Timeline Content */}
-            <div className={`ml-4 pb-8 progress-details-${index}`}>
-              <p className="text-sm text-[#272727] font-semibold">{entry.date}</p>
-              <p className="text-sm text-[#414042]">{entry.time}</p>
-              <p className="text-sm text-[#272727] font-medium mt-1">{entry.status}</p>
-              <p className="text-sm text-[#414042]">{entry.description}</p>
-            </div>
-          </div>
-        ))}
+          {/* Red Progress Path */}
+          <path
+            d="M100,10 Q180,10 180,160 Q180,310 100,310"
+            fill="none"
+            stroke="#ff0000"
+            strokeWidth="15"
+            strokeDasharray={pathLength}
+            strokeDashoffset={dashOffset}
+            style={{
+              transition: "stroke-dashoffset 0.5s ease-in-out",
+            }}
+          />
+        </svg>
+
+        {/* Icons Positioned Along the Path */}
+        <div
+          style={{
+            position: "absolute",
+            top: "5px",
+            left: "5px",
+            color: progress >= 25 ? "#ff0000" : "#b0b0b0",
+          }}
+        >
+          📱
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: "5px",
+            left: "150px",
+            color: progress >= 50 ? "#ff0000" : "#b0b0b0",
+          }}
+        >
+          📅
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: "150px",
+            left: "170px",
+            color: progress >= 75 ? "#ff0000" : "#b0b0b0",
+          }}
+        >
+          🚚
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: "305px",
+            left: "5px",
+            color: progress >= 100 ? "#ff0000" : "#b0b0b0",
+          }}
+        >
+          📦
+        </div>
+      </div>
+
+      {/* Progress Controls */}
+      <div style={{ marginTop: "20px", textAlign: "center" }}>
+        <button
+          onClick={() => setProgress((prev) => Math.max(prev - 25, 0))}
+          style={{
+            padding: "10px 20px",
+            marginRight: "10px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => setProgress((prev) => Math.min(prev + 25, 100))}
+          style={{
+            padding: "10px 20px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
