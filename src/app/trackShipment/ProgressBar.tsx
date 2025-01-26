@@ -23,8 +23,8 @@ interface StopPosition {
 }
 
 const ProgressBar = ({
-    width = 800,
-    height = 200,
+    width = 1200,
+    height = 350,
     trackColor = "#c2212e",
     trackBgColor = "#e5e7eb",
     borderWidth = 8,
@@ -36,32 +36,32 @@ const ProgressBar = ({
     const stopContent: StopContent[] = [
         {
             svg: "/first.svg",
-            text: "Check the Prices and Book Your Shipments with AAJ Swift",
+            text: "Check the Prices and Book your Shipments with AAJ Swift",
             position: "top"
         },
         {
             svg: "/second.svg",
-            text: "Making progress",
+            text: "Know Your Promise Delivery Date before Booking",
             position: "top"
         },
         {
             svg: "/third.svg",
-            text: "Halfway there",
+            text: "Shipment Pickup by AAJ Team",
             position: "top"
         },
         {
             svg: "/fourth.svg",
-            text: "Almost done",
+            text: "Access PODs Online",
             position: "bottom"
         },
         {
             svg: "/fifth.svg",
-            text: "Final stretch",
+            text: "On-time Delivery as Promised",
             position: "bottom"
         },
         {
             svg: "/sixth.svg",
-            text: "Complete!",
+            text: "Real-time Shipment Tracking",
             position: "bottom"
         }
     ];
@@ -115,7 +115,7 @@ const ProgressBar = ({
     return (
         <div className="relative z-50">
             <div className="relative">
-                <div className="absolute top-0 left-0 w-full">
+                <div className="absolute top-0 -left-[25px] w-full">
                     {stopContent
                         .filter((content) => content.position === "top")
                         .map((content, index) => (
@@ -143,7 +143,7 @@ const ProgressBar = ({
 
 
                                 </div>
-                                <div className="-bottom-10 w-[100px]  text-sm font-medium wtext-center">{content.text}</div>
+                                <div className="-bottom-10 w-[160px] mt-4 text-sm font-medium text-center">{content.text}</div>
                             </div>
                         ))}
                 </div>
@@ -172,7 +172,7 @@ const ProgressBar = ({
                     />
                 </svg>
 
-                <div className="absolute bottom-0 left-0 w-full">
+                <div className="absolute bottom-0 -left-[25px] w-full">
                     {stopContent
                         .filter((content) => content.position === "bottom")
                         .map((content, index) => (
@@ -185,7 +185,7 @@ const ProgressBar = ({
                                     transition: "color 0.3s ease-in-out",
                                 }}
                             >
-                                <div className="bottom-10 absolute">
+                                <div className="bottom-20 absolute">
                                     <img
                                         src={content.svg}
                                         alt={content.text}
@@ -197,7 +197,7 @@ const ProgressBar = ({
                                         className="transition-all duration-300"
                                     />
                                 </div>
-                                <div className="top-4 w-[80px] text-center  text-sm font-medium ">{content.text}</div>
+                                <div className="top-4 mt-3 w-[120px] text-center text-sm font-medium">{content.text}</div>
                             </div>
                         ))}
                 </div>
