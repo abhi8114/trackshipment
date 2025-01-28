@@ -35,32 +35,32 @@ const ProgressBar = ({
     const stopPercentages: number[] = [4, 20, 35, 65, 82, 100];
     const stopContent: StopContent[] = [
         {
-            svg: "/first.svg",
+            svg: "/sixth.svg",
             text: "Check the Prices and Book your Shipments with AAJ Swift",
             position: "top"
         },
         {
-            svg: "/second.svg",
+            svg: "/first.svg",
             text: "Know Your Promise Delivery Date before Booking",
             position: "top"
         },
         {
-            svg: "/third.svg",
+            svg: "/second.svg",
             text: "Shipment Pickup by AAJ Team",
             position: "top"
         },
         {
-            svg: "/fourth.svg",
+            svg: "/third.svg",
             text: "Access PODs Online",
             position: "bottom"
         },
         {
-            svg: "/fifth.svg",
+            svg: "/fourth.svg",
             text: "On-time Delivery as Promised",
             position: "bottom"
         },
         {
-            svg: "/sixth.svg",
+            svg: "/fifth.svg",
             text: "Real-time Shipment Tracking",
             position: "bottom"
         }
@@ -135,8 +135,9 @@ const ProgressBar = ({
                                         alt={content.text}
                                         width="36"
                                         height="36"
+                                        className="w-auto h-[36px]"
                                         style={{
-                                            filter: activeStops[index] ? "invert(15%) sepia(95%) saturate(4476%) hue-rotate(343deg) brightness(87%) contrast(93%)" : "invert(42%) sepia(9%) saturate(13%) hue-rotate(201deg) brightness(97%) contrast(87%)"
+                                            filter: activeStops[index] ? "invert(0%) sepia(95%) saturate(10000%) hue-rotate(343deg) brightness(87%) contrast(93%)" : "invert(42%) sepia(9%) saturate(13%) hue-rotate(201deg) brightness(97%) contrast(87%)"
                                         }}
 
                                     />
@@ -191,10 +192,10 @@ const ProgressBar = ({
                                         alt={content.text}
                                         width="36"
                                         height="36"
+                                        className="w-auto h-10 transition-all duration-300"
                                         style={{
-                                            filter: activeStops[index + 3] ? "invert(15%) sepia(95%) saturate(4476%) hue-rotate(343deg) brightness(87%) contrast(93%)" : "invert(42%) sepia(9%) saturate(13%) hue-rotate(201deg) brightness(97%) contrast(87%)"
+                                            filter: activeStops[index + 3] ? "invert(0%) sepia(95%) saturate(10000%) hue-rotate(343deg) brightness(87%) contrast(93%)" : "invert(42%) sepia(9%) saturate(13%) hue-rotate(201deg) brightness(97%) contrast(87%)"
                                         }}
-                                        className="transition-all duration-300"
                                     />
                                 </div>
                                 <div className="top-4 mt-3 w-[120px] text-center text-sm font-medium">{content.text}</div>
